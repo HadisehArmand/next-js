@@ -1,4 +1,5 @@
-import Link from "next/link";
+// import Link from "next/link";
+import Navbar from "./components/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -13,12 +14,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav>
+        {/* <nav>
           <h2>opencode helpdesk</h2>
           <Link href="/">Doshboard</Link>
           <br />
           <Link href="/tickets">Tickets</Link>
-        </nav>
+        </nav> */}
+        <Navbar />
         {children}
       </body>
     </html>
