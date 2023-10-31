@@ -1,5 +1,7 @@
-import React from "react";
-
-export default function tickets() {
-  return <h2>tickets</h2>;
+export default function Tickets() {
+  return (
+    <main>
+      <h2>Tickets</h2>
+    </main>
+  );
 }
