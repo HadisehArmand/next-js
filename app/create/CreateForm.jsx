@@ -22,14 +22,13 @@ export default function CreateForm() {
       user_email: "OpenCode@opencode.dev",
     };
 
-    const res = await fetch(
-      "https://654ccfde77200d6ba85977b0.mockapi.io/api/token/token",
+    const res =
+      await ("https://654ccfde77200d6ba85977b0.mockapi.io/api/token/token",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(ticket),
-      }
-    );
+      });
 
     if (res.status === 201) {
       router.push("/tickets");

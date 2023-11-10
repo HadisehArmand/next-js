@@ -32,7 +32,6 @@ async function getTickets(id) {
 
 export default async function TicketDetails({ params }) {
   const ticket = await getTickets(params.id);
-
   return (
     <main>
       <nav>
@@ -42,6 +41,8 @@ export default async function TicketDetails({ params }) {
         <h3>{ticket.title}</h3>
         <small>Created by {ticket.user_email}</small>
         <p>{ticket.body}</p>
+        <br />
+        <p>{ticket.token}</p>
         <div className={`pill ${ticket.priority}`}>
           {ticket.priority} priority
         </div>
