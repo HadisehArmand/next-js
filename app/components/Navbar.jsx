@@ -4,10 +4,10 @@ import React from "react";
 export default function Navbar() {
   return (
     <nav>
-      <h2>opencode helpdesk</h2>
+      <h2>helpdesk</h2>
       <Link href="/">Doshboard</Link>
-      <br />
       <Link href="/tickets">Tickets</Link>
+      <Link href="/create">Create</Link>
     </nav>
   );
 }
