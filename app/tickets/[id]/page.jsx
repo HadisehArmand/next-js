@@ -42,7 +42,6 @@ export default async function TicketDetails({ params }) {
         <small>Created by {ticket.user_email}</small>
         <p>{ticket.body}</p>
         <br />
-        <p>{ticket.token}</p>
         <div className={`pill ${ticket.priority}`}>
           {ticket.priority} priority
         </div>

@@ -1,4 +1,8 @@
 import Link from "next/link";
+import { cookies } from "next/headers";
+import { getCookies } from "cookies-next";
+import { setCookie, getCookie } from "cookies-next";
+// import { useCookies } from "react-cookie";
 
 async function getTickets() {
   // adding more Delay
@@ -18,6 +22,7 @@ async function getTickets() {
 
 export default async function TicketList() {
   const tickets = await getTickets();
+  tickets.map((ticket) => setCookie(ticket.id, ticket.token, { maxAge: 20 }));
 
   return (
     <>
@@ -25,10 +30,11 @@ export default async function TicketList() {
         <div key={ticket.id} className="card my-5">
           <Link href={`/tickets/${ticket.id}`}>
             <h3>{ticket.title}</h3>
-            <p>{ticket.body.slice(0, 200)}...</p>.<p>{ticket.token}</p>
+            <p>{ticket.body.slice(0, 200)}...</p>
             <div className={`pill ${ticket.priority}`}>
               {ticket.priority} priority
             </div>
+            <div>{getCookie(ticket.token)}</div>
           </Link>
         </div>
       ))}
