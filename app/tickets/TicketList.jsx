@@ -34,7 +34,9 @@ export default async function TicketList() {
             <h5>cookie data</h5>
             <h3>{ticket.title}</h3>
             <p>{ticket.body.slice(0, 200)}...</p>
-            <div className={`pill`}>{ticket.priority} priority</div>
+            <div className={`pill ${ticket.priority}`}>
+              {ticket.priority.toString()}
+            </div>
             <div>{getCookie(ticket.token)}</div>
           </Link>
         </div>

@@ -43,7 +43,7 @@ export default async function TicketDetails({ params }) {
         <p>{ticket.body}</p>
         <br />
         <div className={`pill ${ticket.priority}`}>
-          {ticket.priority} priority
+          {ticket.priority.toString()}
         </div>
       </div>
     </main>
