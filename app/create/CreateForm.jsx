@@ -8,7 +8,6 @@ export default function CreateForm() {
 
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [priority, setPriority] = useState("low");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -18,8 +17,7 @@ export default function CreateForm() {
     const ticket = {
       title,
       body,
-      priority,
-      user_email: "OpenCode@opencode.dev",
+      user_email: "",
     };
 
     const res =
@@ -30,10 +28,8 @@ export default function CreateForm() {
         body: JSON.stringify(ticket),
       });
 
-    if (res.status === 201) {
-      router.push("/tickets");
-      router.refresh();
-    }
+    router.push("/tickets");
+    router.refresh();
   };
 
   return (

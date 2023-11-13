@@ -1,3 +1,4 @@
+import cookie from "js-cookie";
 import Link from "next/link";
 
 export default function Home() {
@@ -15,7 +16,13 @@ export default function Home() {
 
       <div className="flex justify-center my-8">
         <Link href="/tickets">
-          <button className="btn-primary">View Tickets</button>
+          <button
+            className="btn-primary"
+            type="button"
+            onClick={cookie.set("token", "Armand", { expires: 1 / 24 })}
+          >
+            View Tickets
+          </button>
         </Link>
       </div>
 

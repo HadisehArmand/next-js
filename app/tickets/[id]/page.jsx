@@ -15,10 +15,10 @@ async function getTickets(id) {
   //adding more Delay
   await new Promise((resolve) => setTimeout(resolve, 300));
   const res = await fetch(
-    "https://654ccfde77200d6ba85977b0.mockapi.io/api/token/token" / +id,
+    "https://654ccfde77200d6ba85977b0.mockapi.io/api/token/token/" + id,
     {
       next: {
-        revalidate: 5,
+        revalidate: 60,
       },
     }
   );
